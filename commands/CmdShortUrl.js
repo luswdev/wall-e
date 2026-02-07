@@ -3,7 +3,6 @@
 const { EmbedBuilder } = require('discord.js')
 
 const CmdBase = require('commands/CmdBase.js')
-const { log } = require('utils/UtlLog.js')
 const { isGd } = require('utils/UtlIsGd.js')
 
 class CmdShortUrl extends CmdBase {

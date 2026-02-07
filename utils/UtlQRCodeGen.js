@@ -1,6 +1,6 @@
 'use strict'
 
-const { mkdirSync, writeFileSync, createWriteStream } = require('fs')
+const { mkdirSync } = require('fs')
 const qrcode = require('qrcode')
 
 const { log } = require('utils/UtlLog.js')
