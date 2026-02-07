@@ -2,7 +2,6 @@
 
 const EvtBase = require('events/EvtBase')
 
-const { db } = require('config.json')
 const { log } = require('utils/UtlLog.js')
 
 class EvtInteractionCreate extends EvtBase {
