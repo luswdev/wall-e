@@ -23,7 +23,7 @@ class EvtInteractionCreate extends EvtBase {
 
             await _interaction.deferReply()
 
-            reply = _client.cmdList.parseCmd(command, _interaction, _client)
+            reply = await _client.cmdList.parseCmd(command, _interaction, _client)
         } else {
             log.write('unhandled interaction:', _interaction.type)
             return
