@@ -1,0 +1,19 @@
+{
+    "bot": {
+        "client_id": "",
+        "token": "",
+        "debug": "",
+        "announcement": "",
+        "developer": [
+            ""
+        ]
+    },
+    "openexchangerates": {
+        "key": "",
+        "out": "/tmp/openexchangerates/latest.json"
+    },
+    "qrcode": {
+        "out_dir": "/tmp/qrcode-dc/",
+        "max_temp_files": 100
+    }
+}
