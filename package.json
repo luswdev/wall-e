@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "start": "NODE_PATH=. node index.js",
-    "test": "NODE_PATH=. node -e 'require(\"utils/UtlOpenExchangeRate.js\").test()'"
   },
   "author": "LuSkywalker",
   "license": "ISC",
