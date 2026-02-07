@@ -1,6 +1,6 @@
 'use strict'
 
-const {  Collection } = require('discord.js')
+const { Collection } = require('discord.js')
 const EvtBase = require('events/EvtBase')
 
 const { bot } = require('config.json')
