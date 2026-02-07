@@ -7,7 +7,6 @@ const { bot } = require('config.json')
 
 const { log } = require('utils/UtlLog.js')
 const ErrorHandler = require('utils/UtlErrHandler.js')
-const { openExchangeRate } = require('utils/UtlOpenExchangeRate.js')
 const Announcement = require('utils/UtlAnnouncement.js')
 
 class EvtReady extends EvtBase {
