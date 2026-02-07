@@ -3,6 +3,7 @@
 const schedule = require('node-schedule')
 const { EmbedBuilder } = require('discord.js')
 
+const { openExchangeRate } = require('utils/UtlOpenExchangeRate.js')
 const currencyList = require('data/currencies.json')
 
 class Announcement {
@@ -29,7 +30,7 @@ class Announcement {
 
         let announcements = ''
         for (let currency of _currencies) {
-            const rate = this.client.ore.getRate("TWD", currency)
+            const rate = openExchangeRate.getRate("TWD", currency)
             if (rate > 1) {
                 announcements += `1 :${currencyList["TWD"]}:\`TWD\` = \`${rate.toFixed(6)}\` :${currencyList[currency]}:\`${currency}\`\n`
             } else {

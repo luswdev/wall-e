@@ -49,4 +49,8 @@ class OpenExchangeRate {
     }
 }
 
-module.exports = OpenExchangeRate
+const openExchangeRateInst = new OpenExchangeRate()
+openExchangeRateInst.fetch()
+openExchangeRateInst.scheduler()
+
+module.exports.openExchangeRate = openExchangeRateInst

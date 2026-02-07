@@ -4,6 +4,7 @@ const { EmbedBuilder } = require('discord.js')
 
 const CmdBase = require('commands/CmdBase.js')
 
+const { openExchangeRate } = require('utils/UtlOpenExchangeRate.js')
 const currencyList = require('data/currencies.json')
 
 class CmdGetCurrency extends CmdBase {
@@ -31,10 +32,10 @@ class CmdGetCurrency extends CmdBase {
             .setFooter({ text: 'Powered by OpenExchangeRate', iconURL: _interaction.user.avatarURL()})
             .setTimestamp()
 
-        const rate = _client.ore.getRate(_input_currency, _target_currency) // _target_currency / _input_currency
+        const rate = openExchangeRate.getRate(_input_currency, _target_currency) // _target_currency / _input_currency
 
         let description = `${_price} :${currencyList[_input_currency]}:\`${_input_currency}\` = \`${(rate * _price).toFixed(6)}\` :${currencyList[_target_currency]}:\`${_target_currency}\`\n`
-        description += `\nlast updated at <t:${_client.ore.getUpdateTime()}:F>`
+        description += `\nlast updated at <t:${openExchangeRate.getUpdateTime()}:F>`
 
         embed.setDescription(description)
         return { embeds: [embed] }
