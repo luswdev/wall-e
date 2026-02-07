@@ -3,5 +3,10 @@
         "info": "Get currency exchange rate",
         "value": "get-currency",
         "arguments": ["input_currency", "target_currency", "price"]
+    },
+    {
+        "info": "Generate QR code for given text or URL",
+        "value": "qrcode",
+        "arguments": ["text"]
     }
 ]
