@@ -8,5 +8,10 @@
         "info": "Generate QR code for given text or URL",
         "value": "qrcode",
         "arguments": ["text"]
+    },
+    {
+        "info": "Shorten a URL using is.gd service",
+        "value": "surl",
+        "arguments": ["url"]
     }
 ]
