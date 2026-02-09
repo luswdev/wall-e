@@ -2,26 +2,108 @@
     {
         "info": "Get currency exchange rate",
         "value": "currency",
-        "arguments": ["currency1", "currency2", "price"]
+        "icon": "<:dollar:1470373083457261568>",
+        "arguments": ["currency1", "currency2", "price"],
+        "details": [
+            "Calculates the exchange rate from one currency to another based on the provided amount.",
+            "`currency1`: The currency code you want to convert from (e.g., USD).",
+            "`currency2`: The currency code you want to convert to (e.g., TWD).",
+            "`price`: The amount of currency1 to convert (default is 1 if not provided)."
+        ],
+        "examples": [
+            {
+                "command": "currency `USD` `TWD` `100`",
+                "explanation": "Convert 100 USD to TWD"
+            },
+            {
+                "command": "currency `EUR` `JPY`",
+                "explanation": "Convert 1 EUR to JPY"
+            }
+        ]
     },
     {
         "info": "Generate QR code for given text or URL",
         "value": "qrcode",
-        "arguments": ["text"]
+        "icon": "<:qrcode:1470370977899745310>",
+        "arguments": ["text"],
+        "details": [
+            "Generates a QR code for the given text or URL."
+        ],
+        "examples": [
+            {
+                "command": "qrcode `https://example.com`",
+                "explanation": "Generates a QR code for the URL https://example.com"
+            },
+            {
+                "command": "qrcode `Hello, World!`",
+                "explanation": "Generates a QR code for the text 'Hello, World!'"
+            }
+        ]
     },
     {
         "info": "Shorten a URL using is.gd service",
         "value": "surl",
-        "arguments": ["url"]
+        "icon": "<:browser:1470372416034177187>",
+        "arguments": ["url"],
+        "details": [
+            "Shortens a URL using the is.gd service."
+        ],
+        "examples": [
+            {
+                "command": "surl `https://www.example.com/some/long/path`",
+                "explanation": "Shortens the provided long URL"
+            }
+        ]
     },
     {
         "info": "Pick a random item from the provided list",
         "value": "rpick",
-        "arguments": ["item1", "item2"]
+        "icon": "<:casino:1470371657041317939>",
+        "arguments": ["item1", "item2"],
+        "details": [
+            "Picks a random item from the provided list."
+        ],
+        "examples": [
+            {
+                "command": "rpick `apple` `banana`",
+                "explanation": "Randomly picks either 'apple' or 'banana'"
+            }
+        ]
     },
     {
         "info": "Pick a random item from multiple provided items",
         "value": "mrpick",
-        "arguments": ["items"]
+        "icon": "<:d20:1470395769352880268>",
+        "arguments": ["items"],
+        "details": [
+            "Picks a random item from multiple provided items.",
+            "Using , to separate items, e.g., 'apple, banana, cherry'."
+        ],
+        "examples": [
+            {
+                "command": "mrpick `apple, banana, cherry`",
+                "explanation": "Randomly picks one item from 'apple', 'banana', or 'cherry'"
+            }
+        ]
+    },
+    {
+        "info": "Show help information",
+        "value": "help",
+        "icon": "<:question:1470402698481500283>",
+        "arguments": ["command"],
+        "details": [
+            "Shows help information for a specific command.",
+            "`command`: The command to show help for (optional). If not provided, shows general help."
+        ],
+        "examples": [
+            {
+                "command": "help `currency`",
+                "explanation": "Shows help for the 'currency' command"
+            },
+            {
+                "command": "help",
+                "explanation": "Shows general help information"
+            }
+        ]
     }
 ]
