@@ -10,7 +10,7 @@ WALL-E is a discord bot, [get started](https://discord.com/oauth2/authorize?clie
 
 ## User Privacy
 
-- This Bot will and never collect any user data.
+- This bot will and never collect any user data.
 - All interaction will not be stored.
 
 ## Dependencies
@@ -21,4 +21,4 @@ WALL-E is a discord bot, [get started](https://discord.com/oauth2/authorize?clie
 
 ## License
 
-Under license with [LSC](https://github.com/luswdev/wall-e?tab=ISC-1-ov-file#readme).
+Under license with [LSC](https://github.com/luswdev/wall-e/blob/main/LICENSE).
