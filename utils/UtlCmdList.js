@@ -75,6 +75,21 @@ class CmdList {
             }
         }
     }
+
+
+    async parseButton(_btn, _interaction, _client) {
+        for (let cmd of this.cmds) {
+            if (_btn.cmd == cmd.cmdKey) {
+                log.write('inner command:', cmd.cmdKey)
+
+                if (this.checkCmdPermission(cmd, _interaction)) {
+                    return await cmd.doButton(_btn, _interaction, _client)
+                } else {
+                    return _client.errHandler.permissionDeniedMsg()
+                }
+            }
+        }
+    }
 }
 
 module.exports = CmdList

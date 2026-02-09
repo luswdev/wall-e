@@ -32,6 +32,15 @@ class EvtInteractionCreate extends EvtBase {
             await _interaction.deferReply( { ephemeral: true } )
 
             reply = await _client.cmdList.parseSelect(selected, _interaction, _client)
+        } else if (_interaction.isButton()) {
+            const btn = JSON.parse(_interaction.customId)
+            command = btn.cmd
+
+            log.write('parsing button:', btn)
+
+            await _interaction.deferUpdate()
+
+            reply = await _client.cmdList.parseButton(btn, _interaction, _client)
         } else {
             log.write('unhandled interaction:', _interaction.type)
             return
