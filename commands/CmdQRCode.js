@@ -13,13 +13,13 @@ class CmdQRCode extends CmdBase {
         ])
     }
 
-    async doCmd (_interaction, _client) {
+    async doCmd (_interaction) {
         const text2gen = _interaction.options.getString('text') ?? ''
-        const reply = await this.buildMessage(text2gen, _interaction, _client)
+        const reply = await this.buildMessage(text2gen, _interaction)
         return reply
     }
 
-    async buildMessage (_text2gen, _interaction, _client) {
+    async buildMessage (_text2gen, _interaction) {
         const embed = new EmbedBuilder()
             .setTitle(`<:qrcode:1470370977899745310> QR Code Generator`)
             .setColor('#2980B9')

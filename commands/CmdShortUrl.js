@@ -13,13 +13,13 @@ class CmdShortUrl extends CmdBase {
         ])
     }
 
-    async doCmd (_interaction, _client) {
+    async doCmd (_interaction) {
         const url2shorten = _interaction.options.getString('url') ?? ''
-        const reply = await this.buildMessage(url2shorten, _interaction, _client)
+        const reply = await this.buildMessage(url2shorten, _interaction)
         return reply
     }
 
-    async buildMessage (_url2shorten, _interaction, _client) {
+    async buildMessage (_url2shorten, _interaction) {
         const embed = new EmbedBuilder()
             .setTitle(`<:browser:1470372416034177187> Shortened URL`)
             .setColor('#9B59B6')

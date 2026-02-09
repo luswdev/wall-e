@@ -17,15 +17,15 @@ class CmdGetCurrency extends CmdBase {
         ])
     }
 
-    doCmd (_interaction, _client) {
+    doCmd (_interaction) {
         const price = _interaction.options.getInteger('price') ?? 1
         const input_currency = _interaction.options.getString('currency1') ?? 'USD'
         const target_currency = _interaction.options.getString('currency2') ?? 'TWD'
-        const reply = this.buildMessage(input_currency.toUpperCase(), target_currency.toUpperCase(), price, _interaction, _client)
+        const reply = this.buildMessage(input_currency.toUpperCase(), target_currency.toUpperCase(), price, _interaction)
         return reply
     }
 
-    buildMessage (_input_currency, _target_currency, _price, _interaction, _client) {
+    buildMessage (_input_currency, _target_currency, _price, _interaction) {
         const embed = new EmbedBuilder()
             .setTitle(`<:dollar:1470373083457261568> Currency Conversion`)
             .setColor('#D4AF37')

@@ -13,22 +13,22 @@ class CmdRandomPick extends CmdBase {
         ])
     }
 
-    doCmd (_interaction, _client) {
+    doCmd (_interaction) {
         random.initRandom()
         const items = _interaction.options.getString('items') ?? ''
         const itemsArray = items.split(',').map(item => item.trim())
-        const reply = this.buildMessage(itemsArray, _interaction, _client)
+        const reply = this.buildMessage(itemsArray, _interaction)
         return reply
     }
 
-    doButton (_btn, _interaction, _client) {
+    doButton (_btn, _interaction) {
         random.initRandom()
         const itemsArray = _btn.items
-        const reply = this.buildMessage(itemsArray, _interaction, _client)
+        const reply = this.buildMessage(itemsArray, _interaction)
         return reply
     }
 
-    buildMessage (_itemsArray, _interaction, _client) {
+    buildMessage (_itemsArray, _interaction) {
         const embed = new EmbedBuilder()
             .setTitle(`<:d20:1470395769352880268> Random Picker!`)
             .setColor('#F1948A')
