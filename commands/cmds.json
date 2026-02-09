@@ -18,5 +18,10 @@
         "info": "Pick a random item from the provided list",
         "value": "rpick",
         "arguments": ["item1", "item2"]
+    },
+    {
+        "info": "Pick a random item from multiple provided items",
+        "value": "mrpick",
+        "arguments": ["items"]
     }
 ]
