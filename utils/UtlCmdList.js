@@ -25,6 +25,7 @@ class CmdList {
                 let strOption = new SlashCommandStringOption()
                 strOption.setName(opt.name)
                     .setDescription(opt.info)
+                    .setRequired(opt.required ?? false)
 
                 if (opt.choices) {
                     for (let choice of opt.choices) {
