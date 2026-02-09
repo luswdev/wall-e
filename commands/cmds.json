@@ -13,5 +13,10 @@
         "info": "Shorten a URL using is.gd service",
         "value": "surl",
         "arguments": ["url"]
+    },
+    {
+        "info": "Pick a random item from the provided list",
+        "value": "rpick",
+        "arguments": ["item1", "item2"]
     }
 ]
