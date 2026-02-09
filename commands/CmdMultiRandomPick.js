@@ -1,6 +1,6 @@
 'use strict'
 
-const { EmbedBuilder } = require('discord.js')
+const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js')
 
 const CmdBase = require('commands/CmdBase.js')
 const { random } = require('utils/UtlRandom.js')
@@ -21,6 +21,13 @@ class CmdRandomPick extends CmdBase {
         return reply
     }
 
+    async doButton (_btn, _interaction, _client) {
+        random.initRandom()
+        const itemsArray = _btn.items
+        const reply = await this.buildMessage(itemsArray, _interaction, _client)
+        return reply
+    }
+
     async buildMessage (_itemsArray, _interaction, _client) {
         const embed = new EmbedBuilder()
             .setTitle(`<:d20:1470395769352880268> Random Picker!`)
@@ -33,7 +40,16 @@ class CmdRandomPick extends CmdBase {
 
         embed.setDescription(`I picked: **${pickedItem}**\n\n(from: ${_itemsArray.map(item => `\`${item}\``).join(', ')})`)
 
-        return { embeds: [embed] }
+        const btn = {cmd: this.cmdKey, items: _itemsArray }
+
+        const row = new ActionRowBuilder()
+            .addComponents( new ButtonBuilder()
+                .setCustomId(JSON.stringify(btn))
+                .setLabel('Pick Again')
+                .setStyle(ButtonStyle.Primary)
+            )
+
+        return { embeds: [embed], components: [row] }
     }
 }
 
