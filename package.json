@@ -1,6 +1,6 @@
 {
   "name": "wall-e",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "a agent bot for discord",
   "main": "index.js",
   "scripts": {
