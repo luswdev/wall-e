@@ -8,6 +8,9 @@
             ""
         ]
     },
+    "git": {
+        "repository": "https://github.com/luswdev/wall-e"
+    },
     "openexchangerates": {
         "key": ""
     },

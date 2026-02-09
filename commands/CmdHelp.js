@@ -6,9 +6,6 @@ const { version } = require('package.json')
 const cmds = require('commands/cmds.json')
 const CmdBase = require('commands/CmdBase.js')
 
-const { log } = require('utils/UtlLog.js')
-
-
 class CmdHelp extends CmdBase {
 
     constructor () {
@@ -24,6 +21,9 @@ class CmdHelp extends CmdBase {
         super('help', [{ type: 'string', name: 'command', info: 'Show help for a specific command', choices: choices }])
 
         this.choices = choices
+
+        const { git } = require('config.json')
+        this.homeURL = git.repository
     }
 
     doCmd (_interaction, _client) {
@@ -78,8 +78,6 @@ class CmdHelp extends CmdBase {
 
         for (let cmd of cmds) {
             if (cmd.value === _cmd) {
-                log.write('found command info for:', cmd.value)
-
                 let rawCmd = _client.commands.toJSON().find( (c) => c.name === cmd.value )
                 isCmd = true
 
@@ -120,19 +118,17 @@ class CmdHelp extends CmdBase {
                 )
         }
 
-        // const row = new ActionRowBuilder()
-        //     .addComponents( new ButtonBuilder()
-        //         .setURL(this.homeURL)
-        //         .setLabel('Information')
-        //         .setStyle(ButtonStyle.Link)
-        //         .setEmoji('<:splatoonbot:1042279520759185478>'),
-        //     )
+        const row = new ActionRowBuilder()
+            .addComponents( new ButtonBuilder()
+                .setURL(this.homeURL)
+                .setLabel('Information')
+                .setStyle(ButtonStyle.Link)
+                .setEmoji('<:git:1470408016057729200>'),
+            )
 
         const list = this.buildCmdSelect(_cmd)
 
-        log.write('embedded:', infoEmbed)
-
-        return { embeds: [infoEmbed], components: [list], ephemeral: isCmd }
+        return { embeds: [infoEmbed], components: [list, row], ephemeral: isCmd }
     }
 }
 
