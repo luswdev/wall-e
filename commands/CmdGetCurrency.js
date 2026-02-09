@@ -27,7 +27,7 @@ class CmdGetCurrency extends CmdBase {
 
     buildMessage (_input_currency, _target_currency, _price, _interaction, _client) {
         const embed = new EmbedBuilder()
-            .setTitle(`${_input_currency} :arrow_right: ${_target_currency}`)
+            .setTitle(`<:dollar:1470373083457261568> Currency Conversion`)
             .setColor('#D4AF37')
             .setFooter({ text: 'Powered by OpenExchangeRate', iconURL: _interaction.user.avatarURL()})
             .setTimestamp()

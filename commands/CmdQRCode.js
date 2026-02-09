@@ -21,7 +21,7 @@ class CmdQRCode extends CmdBase {
 
     async buildMessage (_text2gen, _interaction, _client) {
         const embed = new EmbedBuilder()
-            .setTitle(`QR Code Generator`)
+            .setTitle(`<:qrcode:1470370977899745310> QR Code Generator`)
             .setColor('#2980B9')
             .setFooter({ text: `Requested by ${_interaction.user.tag}`, iconURL: _interaction.user.avatarURL() })
             .setTimestamp()

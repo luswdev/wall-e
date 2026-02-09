@@ -21,14 +21,14 @@ class CmdShortUrl extends CmdBase {
 
     async buildMessage (_url2shorten, _interaction, _client) {
         const embed = new EmbedBuilder()
-            .setTitle(`Shortened URL`)
+            .setTitle(`<:browser:1470372416034177187> Shortened URL`)
             .setColor('#9B59B6')
             .setFooter({ text: `Requested by ${_interaction.user.tag}`, iconURL: _interaction.user.avatarURL() })
             .setTimestamp()
 
         try {
             let shortenedUrl = await isGd.shortenUrl(_url2shorten)
-            embed.setDescription(`➡️ ${shortenedUrl}`)
+            embed.setDescription(`${shortenedUrl}\n\n(original for: \`${_url2shorten}\`)`)
             return { embeds: [embed] }
         } catch (error) {
             embed.setDescription(`Error shortening URL: ${error.message}`)

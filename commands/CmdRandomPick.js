@@ -24,7 +24,7 @@ class CmdRandomPick extends CmdBase {
 
     async buildMessage (_item1, _item2, _interaction, _client) {
         const embed = new EmbedBuilder()
-            .setTitle(`❓ Random Picker!`)
+            .setTitle(`<:casino:1470371657041317939> Random Picker!`)
             .setColor('#F1948A')
             .setFooter({ text: `Requested by ${_interaction.user.tag}`, iconURL: _interaction.user.avatarURL() })
             .setTimestamp()
@@ -32,7 +32,7 @@ class CmdRandomPick extends CmdBase {
         const randomIndex = random.getRandomRange(2)
         const pickedItem = randomIndex === 0 ? _item1 : _item2
 
-        embed.setDescription(`I picked: **${pickedItem}**`)
+        embed.setDescription(`I picked: **${pickedItem}**\n\n(from: \`${_item1}\` and \`${_item2}\`)`)
 
         return { embeds: [embed] }
     }
