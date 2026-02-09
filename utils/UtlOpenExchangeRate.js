@@ -40,7 +40,7 @@ class OpenExchangeRate {
         //                                                            --------------
         // _currency2     _currency2         USD        _currency2      _currency1
         // ----------- = ------------ x ------------ = ------------ x  ------------
-        // _currency1         USD        _currency1         USD            USD
+        // _currency1         USD        _currency1         USD             USD
         return curII2USD * (1 / curI2USD)                   // _currency2 / _currency1
     }
 

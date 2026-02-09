@@ -9,8 +9,7 @@
         ]
     },
     "openexchangerates": {
-        "key": "",
-        "out": "/tmp/openexchangerates/latest.json"
+        "key": ""
     },
     "qrcode": {
         "out_dir": "/tmp/qrcode-dc/",
