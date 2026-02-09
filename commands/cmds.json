@@ -1,8 +1,8 @@
 [
     {
         "info": "Get currency exchange rate",
-        "value": "get-currency",
-        "arguments": ["input_currency", "target_currency", "price"]
+        "value": "currency",
+        "arguments": ["currency1", "currency2", "price"]
     },
     {
         "info": "Generate QR code for given text or URL",

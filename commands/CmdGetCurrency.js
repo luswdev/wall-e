@@ -10,17 +10,17 @@ const currencyList = require('data/currencies.json')
 class CmdGetCurrency extends CmdBase {
 
     constructor () {
-        super('get-currency', [
-            { type: 'string', name: 'input_currency', info: 'from which currency'},
-            { type: 'string', name: 'target_currency', info: 'to which currency'},
+        super('currency', [
+            { type: 'string', name: 'currency1', info: 'from which currency'},
+            { type: 'string', name: 'currency2', info: 'to which currency'},
             { type: 'integer', name: 'price', info: 'total price to calculate', min: 0, required: false },
         ])
     }
 
     doCmd (_interaction, _client) {
         const price = _interaction.options.getInteger('price') ?? 1
-        const input_currency = _interaction.options.getString('input_currency') ?? 'USD'
-        const target_currency = _interaction.options.getString('target_currency') ?? 'TWD'
+        const input_currency = _interaction.options.getString('currency1') ?? 'USD'
+        const target_currency = _interaction.options.getString('currency2') ?? 'TWD'
         const reply = this.buildMessage(input_currency.toUpperCase(), target_currency.toUpperCase(), price, _interaction, _client)
         return reply
     }
