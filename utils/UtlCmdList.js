@@ -25,6 +25,13 @@ class CmdList {
                 let strOption = new SlashCommandStringOption()
                 strOption.setName(opt.name)
                     .setDescription(opt.info)
+
+                if (opt.choices) {
+                    for (let choice of opt.choices) {
+                        strOption.addChoices(choice)
+                    }
+                }
+
                 scb.addStringOption(strOption)
             } else if (opt.type == 'integer') {
                 scb.addIntegerOption( (option) =>
