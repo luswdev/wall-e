@@ -1,6 +1,6 @@
 'use strict'
 
-const { Collection } = require('discord.js')
+const { Collection, ActivityType } = require('discord.js')
 const EvtBase = require('events/EvtBase')
 
 const { bot } = require('config.json')
@@ -16,6 +16,8 @@ class EvtReady extends EvtBase {
     }
 
     async eventCallback (_client) {
+        _client.user.setPresence({ activities: [{ name: 'Evaaaaa', type: ActivityType.Custom }], status: 'online' });
+
         _client.errHandler = new ErrorHandler(_client, bot.debug)
 
         _client.commands = new Collection()
