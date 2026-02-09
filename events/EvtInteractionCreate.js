@@ -38,7 +38,7 @@ class EvtInteractionCreate extends EvtBase {
 
             log.write('parsing button:', btn)
 
-            await _interaction.deferUpdate()
+            await _interaction.deferReply()
 
             reply = await _client.cmdList.parseButton(btn, _interaction, _client)
         } else {
