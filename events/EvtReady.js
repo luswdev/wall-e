@@ -8,6 +8,7 @@ const { bot } = require('config.json')
 const { log } = require('utils/UtlLog.js')
 const ErrorHandler = require('utils/UtlErrHandler.js')
 const Announcement = require('utils/UtlAnnouncement.js')
+const BotInfo = require('utils/UtlBotInfo.js')
 
 class EvtReady extends EvtBase {
 
@@ -27,6 +28,10 @@ class EvtReady extends EvtBase {
 
         _client.announcement = new Announcement(bot.announcement, _client)
         _client.announcement.scheduler()
+
+        _client.botInfo = new BotInfo(_client)
+        _client.botInfo.update()
+        _client.botInfo.schedule()
 
         log.write('bot ready')
     }
