@@ -108,7 +108,7 @@ class CmdHelp extends CmdBase {
             description += `- With others question, please ask to developer.\n\n`
 
             let botInfo = ''
-            botInfo += `\`${_client.botInfo.serverCnt.toLocaleString()}\` servers(s)\n`
+            botInfo += `\`${_client.botInfo.serverCnt.toLocaleString()}\` server(s)\n`
             botInfo += `\`${_client.botInfo.memberCnt.toLocaleString()}\` member(s)\n`
 
             infoEmbed.setDescription(description)
