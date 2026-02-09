@@ -8,9 +8,7 @@ const { qrcodeGen } = require('utils/UtlQRCodeGen.js')
 class CmdQRCode extends CmdBase {
 
     constructor () {
-        super('qrcode', [
-            { type: 'string', name: 'text', info: 'text to generate QR code for'},
-        ])
+        super('qrcode')
     }
 
     async doCmd (_interaction) {

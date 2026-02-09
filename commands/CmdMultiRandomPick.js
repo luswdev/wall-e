@@ -8,9 +8,7 @@ const { random } = require('utils/UtlRandom.js')
 class CmdRandomPick extends CmdBase {
 
     constructor () {
-        super('mrpick', [
-            { type: 'string', name: 'items', info: 'items to pick from (use , to separate items, eg: "apple, banana, cherry")' , required: true },
-        ])
+        super('mrpick')
     }
 
     doCmd (_interaction) {

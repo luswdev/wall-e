@@ -2,6 +2,24 @@
     {
         "info": "Get currency exchange rate",
         "value": "currency",
+        "options": [
+            {
+                "type": "string",
+                "name": "currency1",
+                "info": "from which currency"
+            },
+            {
+                "type": "string",
+                "name": "currency2",
+                "info": "to which currency"
+            },
+            {
+                "type": "integer",
+                "name": "price",
+                "info": "total price to calculate",
+                "min": 0
+            }
+        ],
         "icon": "<:dollar:1470373083457261568>",
         "arguments": ["currency1", "currency2", "price"],
         "details": [
@@ -24,6 +42,14 @@
     {
         "info": "Generate QR code for given text or URL",
         "value": "qrcode",
+        "options": [
+            {
+                "type": "string",
+                "name": "text",
+                "info": "text or URL to generate QR code for",
+                "required": true
+            }
+        ],
         "icon": "<:qrcode:1470370977899745310>",
         "arguments": ["text"],
         "details": [
@@ -43,6 +69,14 @@
     {
         "info": "Shorten a URL using is.gd service",
         "value": "surl",
+        "options": [
+            {
+                "type": "string",
+                "name": "url",
+                "info": "URL to shorten",
+                "required": true
+            }
+        ],
         "icon": "<:browser:1470372416034177187>",
         "arguments": ["url"],
         "details": [
@@ -58,6 +92,20 @@
     {
         "info": "Pick a random item from the provided list",
         "value": "rpick",
+        "options": [
+            {
+                "type": "string",
+                "name": "item1",
+                "info": "first item to pick from",
+                "required": true
+            },
+            {
+                "type": "string",
+                "name": "item2",
+                "info": "second item to pick from",
+                "required": true
+            }
+        ],
         "icon": "<:casino:1470371657041317939>",
         "arguments": ["item1", "item2"],
         "details": [
@@ -73,6 +121,14 @@
     {
         "info": "Pick a random item from multiple provided items",
         "value": "mrpick",
+        "options": [
+            {
+                "type": "string",
+                "name": "items",
+                "info": "items to pick from (use , to separate items, eg: 'apple, banana, cherry')",
+                "required": true
+            }
+        ],
         "icon": "<:d20:1470395769352880268>",
         "arguments": ["items"],
         "details": [

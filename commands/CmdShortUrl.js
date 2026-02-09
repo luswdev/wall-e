@@ -8,9 +8,7 @@ const { isGd } = require('utils/UtlIsGd.js')
 class CmdShortUrl extends CmdBase {
 
     constructor () {
-        super('surl', [
-            { type: 'string', name: 'url', info: 'URL to shorten'},
-        ])
+        super('surl')
     }
 
     async doCmd (_interaction) {
