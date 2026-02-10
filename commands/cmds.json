@@ -143,6 +143,30 @@
         ]
     },
     {
+        "info": "Generate a random number within a specified range",
+        "value": "random",
+        "options": [
+            {
+                "type": "integer",
+                "name": "range",
+                "info": "from 1 to the specified range",
+                "min": 1,
+                "required": true
+            }
+        ],
+        "icon": "<:shuffle:1470564647902908515>",
+        "arguments": ["range"],
+        "details": [
+            "Generates a random number between 1 and the specified range (inclusive)."
+        ],
+        "examples": [
+            {
+                "command": "random `100`",
+                "explanation": "Generates a random number between 1 and 100"
+            }
+        ]
+    },
+    {
         "info": "Show help information",
         "value": "help",
         "icon": "<:question:1470402698481500283>",
