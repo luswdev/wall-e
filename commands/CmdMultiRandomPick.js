@@ -28,7 +28,7 @@ class CmdRandomPick extends CmdBase {
 
     buildMessage (_itemsArray, _interaction) {
         const embed = new EmbedBuilder()
-            .setTitle(`<:d20:1470395769352880268> Random Picker!`)
+            .setTitle(`<:d20:1470395769352880268> Random Picker PRO!`)
             .setColor('#F1948A')
             .setFooter({ text: `Requested by ${_interaction.user.tag}`, iconURL: _interaction.user.avatarURL() })
             .setTimestamp()
