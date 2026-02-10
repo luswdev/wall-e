@@ -35,7 +35,7 @@ class CmdRandomNumber extends CmdBase {
         const randomIndex = random.getRandomRange(_range)
         const pickedNumber = randomIndex + 1
 
-        embed.setDescription(`I picked: **${pickedNumber}**\n\n(from: 1 to ${_range})`)
+        embed.setDescription(`<@${_interaction.user.id}>, I picked: **${pickedNumber}**\n\n(from: 1 to ${_range})`)
 
         const btn = { cmd: this.cmdKey, range: _range }
 

@@ -36,7 +36,7 @@ class CmdRandomPick extends CmdBase {
         const randomIndex = random.getRandomRange(_itemsArray.length)
         const pickedItem = _itemsArray[randomIndex]
 
-        embed.setDescription(`I picked: **${pickedItem}**\n\n(from: ${_itemsArray.map(item => `\`${item}\``).join(', ')})`)
+        embed.setDescription(`<@${_interaction.user.id}>, I picked: **${pickedItem}**\n\n(from: ${_itemsArray.map(item => `\`${item}\``).join(', ')})`)
 
         const btn = {cmd: this.cmdKey, items: _itemsArray }
 

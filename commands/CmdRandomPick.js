@@ -37,7 +37,7 @@ class CmdRandomPick extends CmdBase {
         const randomIndex = random.getRandomRange(2)
         const pickedItem = randomIndex === 0 ? _item1 : _item2
 
-        embed.setDescription(`I picked: **${pickedItem}**\n\n(from: \`${_item1}\` and \`${_item2}\`)`)
+        embed.setDescription(`<@${_interaction.user.id}>, I picked: **${pickedItem}**\n\n(from: \`${_item1}\` and \`${_item2}\`)`)
 
         const btn = {cmd: this.cmdKey, item1: _item1, item2: _item2 }
 
