@@ -25,13 +25,13 @@ class CmdGetCurrency extends CmdBase {
         const embed = new EmbedBuilder()
             .setTitle(`<:dollar:1470373083457261568> Currency Conversion`)
             .setColor('#D4AF37')
-            .setFooter({ text: 'Powered by OpenExchangeRate', iconURL: _interaction.user.avatarURL()})
+            .setFooter({ text: `Requested by ${_interaction.user.tag}`, iconURL: _interaction.user.avatarURL()})
             .setTimestamp()
 
         const rate = openExchangeRate.getRate(_input_currency, _target_currency) // _target_currency / _input_currency
 
         let description = `${_price} :${currencyList[_input_currency]}:\`${_input_currency}\` = \`${(rate * _price).toFixed(6)}\` :${currencyList[_target_currency]}:\`${_target_currency}\`\n`
-        description += `\nlast updated at <t:${openExchangeRate.getUpdateTime()}:F>`
+        description += `\nPowered by [OpenExchangeRate](https://openexchangerates.org/), last updated at <t:${openExchangeRate.getUpdateTime()}:F>`
 
         embed.setDescription(description)
         return { embeds: [embed] }
