@@ -167,6 +167,46 @@
         ]
     },
     {
+        "info": "Transfer time between different timezones",
+        "value": "tztrans",
+        "options": [
+            {
+                "type": "string",
+                "name": "to_tz",
+                "info": "target timezone (e.g., 'Taipei')",
+                "required": true
+            },
+            {
+                "type": "string",
+                "name": "from_tz",
+                "info": "source timezone (e.g., 'New York')"
+            },
+            {
+                "type": "string",
+                "name": "time",
+                "info": "time to transfer (format: YYYY-MM-DD HH:mm)"
+            }
+        ],
+        "icon": "<:clock:1470729126477299834>",
+        "arguments": ["time", "from_tz", "to_tz"],
+        "details": [
+            "Transfers the specified time from one timezone to another.",
+            "`time`: The time to transfer in the format 'YYYY-MM-DD HH:mm'.",
+            "`from_tz`: The source timezone (e.g., 'New York').",
+            "`to_tz`: The target timezone (e.g., 'Taipei')."
+        ],
+        "examples": [
+            {
+                "command": "tztrans `New York` `Taipei` `2023-10-01 15:00`",
+                "explanation": "Transfers 3:00 PM on October 1, 2023 from New York time to Taipei time"
+            },
+            {
+                "command": "tztrans `Los Angeles` `London`",
+                "explanation": "Transfers the current time from Los Angeles time to London time"
+            }
+        ]
+    },
+    {
         "info": "Show help information",
         "value": "help",
         "icon": "<:question:1470402698481500283>",
