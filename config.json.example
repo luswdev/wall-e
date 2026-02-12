@@ -5,7 +5,10 @@
         "debug": "",
         "announcement": "",
         "developer": [
-            ""
+            {
+                "id": "",
+                "name": "@"
+            }
         ]
     },
     "git": {

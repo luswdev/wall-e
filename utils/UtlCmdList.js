@@ -50,7 +50,7 @@ class CmdList {
 
     checkCmdPermission (_cmd, _interaction) {
         if (_cmd.permission) {
-            return bot.developer.find((uid) => uid === _interaction.user.id)
+            return bot.developer.find((dev) => dev.id === _interaction.user.id)
         } else {
             return true
         }
