@@ -28,4 +28,3 @@ WALL-E is a discord bot, [get started](https://discord.com/oauth2/authorize?clie
 ## License
 
 Under license with [ISC](https://github.com/luswdev/wall-e/blob/main/LICENSE).
-

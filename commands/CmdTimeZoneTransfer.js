@@ -89,4 +89,3 @@ class CmdTimeZoneTransfer extends CmdBase {
 }
 
 module.exports = CmdTimeZoneTransfer
-
