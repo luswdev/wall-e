@@ -22,8 +22,9 @@ class CmdHelp extends CmdBase {
 
         this.choices = choices
 
-        const { git } = require('config.json')
+        const { bot, git } = require('config.json')
         this.homeURL = git.repository
+        this.developerList = bot.developer.map( (dev) => dev.name ).join(', ')
     }
 
     doCmd (_interaction, _client) {
@@ -105,7 +106,7 @@ class CmdHelp extends CmdBase {
             let description = ''
             description += `> A agent Discord bot\n`
             description += `- Please click select menu to see command information.\n`
-            description += `- With others question, please ask to developer.\n\n`
+            description += `- With others question, please ask to developer (${this.developerList}).\n\n`
 
             let botInfo = ''
             botInfo += `\`${_client.botInfo.serverCnt.toLocaleString()}\` server(s)\n`
